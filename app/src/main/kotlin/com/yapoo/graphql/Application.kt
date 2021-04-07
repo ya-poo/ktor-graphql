@@ -33,7 +33,7 @@ fun Application.main() {
         }
     }
     install(CallLogging) {
-        level = Level.INFO
+        level = Level.DEBUG
     }
 
     val graphQL = buildGraphQL()
@@ -41,7 +41,7 @@ fun Application.main() {
         route("graphql") {
             post {
                 val request = call.receive<GraphQLRequest>()
-                log.info(request.query)
+                log.debug(request.query)
                 val executionInput = request.toExecutionInput()
                 val response = graphQL.execute(executionInput).toResponse()
                 call.respond(HttpStatusCode.OK, response)
