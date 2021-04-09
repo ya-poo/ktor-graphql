@@ -8,13 +8,13 @@ type Book {
 type Review {
     id: ID!
     stars: Int!
-    commentary: String
+    commentary: String!
 }
 
 type Author {
     id: ID!
     name: String!
-    country: Country
+    country: Country!
 }
 
 enum Country {

@@ -1,0 +1,7 @@
+type Mutation {
+    submitReview (
+        bookId: ID!
+        stars: Int!
+        commentary: String!
+    ): Review
+}
