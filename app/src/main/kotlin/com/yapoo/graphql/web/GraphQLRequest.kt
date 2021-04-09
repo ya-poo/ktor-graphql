@@ -1,4 +1,4 @@
-package com.yapoo.graphql.graphql
+package com.yapoo.graphql.web
 
 import graphql.ExecutionInput
 
