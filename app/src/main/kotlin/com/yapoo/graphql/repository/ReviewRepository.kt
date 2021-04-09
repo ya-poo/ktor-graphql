@@ -7,5 +7,10 @@ class ReviewRepository {
     fun findAllByBookId(bookId: Int) =
         reviews.filter { it.bookId == bookId }
 
-    private val reviews: List<Review> = mutableListOf()
+    fun createReview(review: Review): Review {
+        reviews.add(review)
+        return review
+    }
+
+    private val reviews: MutableList<Review> = mutableListOf()
 }
