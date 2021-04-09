@@ -4,7 +4,9 @@ import com.yapoo.graphql.domain.Book
 
 class BookRepository {
 
-    suspend fun findAll() = records
+    fun findAll() = records
+
+    fun findById(id: Int) = records.singleOrNull { it.id == id }
 
     private val records: List<Book> = listOf(
         Book(1, "春琴抄", 1),

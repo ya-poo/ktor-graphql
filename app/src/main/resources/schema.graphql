@@ -1,14 +1,22 @@
-type Query {
-    books: [Book!]!
-}
-
 type Book {
-    id: Int!
+    id: ID!
     name: String!
     author: Author!
+    reviews: [Review!]!
+}
+
+type Review {
+    id: ID!
+    stars: Int!
+    commentary: String
 }
 
 type Author {
-    id: Int!
+    id: ID!
     name: String!
+    country: Country
+}
+
+enum Country {
+    Japan
 }

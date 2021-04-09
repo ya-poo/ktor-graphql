@@ -8,6 +8,9 @@ class QueryResolver(
     private val bookRepository: BookRepository
 ) : GraphQLQueryResolver {
 
-    suspend fun books() =
+    fun books() =
         bookRepository.findAll()
+
+    fun book(id: Int) =
+        bookRepository.findById(id)
 }

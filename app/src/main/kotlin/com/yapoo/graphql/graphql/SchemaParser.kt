@@ -2,6 +2,8 @@ package com.yapoo.graphql.graphql
 
 import com.yapoo.graphql.repository.AuthorRepository
 import com.yapoo.graphql.repository.BookRepository
+import com.yapoo.graphql.repository.ReviewRepository
+import com.yapoo.graphql.resolver.AuthorResolver
 import com.yapoo.graphql.resolver.BookResolver
 import com.yapoo.graphql.resolver.QueryResolver
 import graphql.GraphQL
@@ -19,7 +21,8 @@ private fun buildSchemaParser() = SchemaParser
     )
     .resolvers(
         QueryResolver(BookRepository()),
-        BookResolver(AuthorRepository()),
+        BookResolver(AuthorRepository(), ReviewRepository()),
+        AuthorResolver(),
     )
     .build()
     .makeExecutableSchema()
