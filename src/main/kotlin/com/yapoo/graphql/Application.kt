@@ -2,8 +2,8 @@ package com.yapoo.graphql
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.SerializationFeature
-import com.yapoo.graphql.web.GraphQLRequest
 import com.yapoo.graphql.graphql.buildGraphQL
+import com.yapoo.graphql.web.GraphQLRequest
 import com.yapoo.graphql.web.toResponse
 import io.ktor.application.*
 import io.ktor.features.*
