@@ -4,6 +4,7 @@ import com.expediagroup.graphql.generator.SchemaGeneratorConfig
 import com.expediagroup.graphql.generator.TopLevelObject
 import com.expediagroup.graphql.generator.toSchema
 import com.expediagroup.graphql.server.execution.GraphQLRequestHandler
+import com.yapoo.graphql.query.BookQuery
 import graphql.GraphQL
 
 class KtorGraphQLRequestHandler(
@@ -17,8 +18,10 @@ private fun createGraphQL(): GraphQL = GraphQL.newGraphQL(
 private fun buildGraphQLSchema() =
     toSchema(config, queries, mutations)
 
-private val config = SchemaGeneratorConfig(supportedPackages = listOf("com.expediagroup.graphql.examples.server.ktor"))
+private val config = SchemaGeneratorConfig(supportedPackages = listOf("com.yapoo.graphql"))
 
-private val queries = listOf<TopLevelObject>()
+private val queries = listOf(
+    TopLevelObject(BookQuery())
+)
 
 private val mutations = listOf<TopLevelObject>()
